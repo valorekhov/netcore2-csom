@@ -5,7 +5,8 @@ The approach is based on using PCL CSOM libraries targeting WindowsStore, and th
 This allows to consume CSOM classes without compilation warnings.
 
 In order to support .NET Core 2.0 platform, the Microsoft.SharePoint.Client.Runtime.WindowsStore library is used. 
-The library contains a single class NetCoreAppPlatformService responsible for loading platform-specfic DLLs.
+The library contains a single class NetCoreAppPlatformService responsible for loading platform-specfic DLLs. The library has to be 
+named ending with Windows|WindowStore|WindowsPhone as these are the name variants that the Client.Runtime platform loader currently recognizes. 
 
 Microsoft.SharePoint.Client.Portable.dll and  Microsoft.SharePoint.Client.Runtime.Portable.dll are distributed with the 
 Microsoft.SharePointOnline.CSOM NuGet package, and are from the netcore45 target of the package. .NET Core project infrastructure 
@@ -17,6 +18,5 @@ does not appear to allow to target a specfific platform from a NuGet package, wh
 
 ## Cons
 
-* PCL libs do not expose synchornous clientContex.Execute() methods, only exposing ExecuteAsync() varians. This will require client
+* PCL libs do not expose synchornous clientContex.Execute() methods, only exposing ExecuteAsync() variants. This will require client
   code to be upaded to work with the async-await pattern.
-
