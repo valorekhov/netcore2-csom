@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.SharePoint.Client.Runtime.WindowsStore\Microsoft.SharePoint.Client.Runtime.WindowsStore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Client.Portable">
+      <HintPath>..\..\lib\Microsoft.SharePoint.Client.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime.Portable">
+      <HintPath>..\..\lib\Microsoft.SharePoint.Client.Runtime.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
